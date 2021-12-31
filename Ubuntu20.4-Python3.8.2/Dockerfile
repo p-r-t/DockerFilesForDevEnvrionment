@@ -59,7 +59,7 @@ RUN  apt-get update && apt-get install -y --no-install-recommends \
     sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config &&\
     sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd &&\
     # useradd --user-group --system --create-home --no-log-init app && \    
-    chown -R app:app $APP_HOME && \    
+    # chown -R app:app $APP_HOME && \    
     pip3 install --no-cache /wheels/* && \
     rm -rf /var/lib/apt/lists/* 
 
